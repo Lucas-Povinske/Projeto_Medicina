@@ -52,7 +52,14 @@ class SpringBootAppApplicationTests {
     // TESTES DE BUSCA
     @Test
     void testaBuscaUsuarioNomeContains() {
+        Usuario usuario = new Usuario();
+        usuario.setNomeUsuario("Povs");
+        usuario.setSenha("senha");
+        usuario.setNomeExibicao("teste");
+
+        usuarioRepo.save(usuario);
         List<Usuario> usuarios = usuarioRepo.findByNomeUsuario("Povs");
+        System.out.print(usuarios);
         assertTrue(!usuarios.isEmpty());
     }
     /*
